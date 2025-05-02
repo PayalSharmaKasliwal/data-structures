@@ -1,0 +1,29 @@
+class Solution(object):
+    def romanToInt(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        roman_map={
+            "I":1,
+            "V":5,
+            "X":10,
+            "L":50,
+            "C":100,
+            "D":500,
+            "M":1000
+        }
+        s=[d for d in s]
+        length=len(s)
+        rtype=0
+        for i in range(length):
+            if(i<length-1 and roman_map[s[i]]<roman_map[s[i+1]]):
+                rtype-=roman_map[s[i]]
+            else:
+                rtype+=roman_map[s[i]]
+        return rtype
+
+
+
+
+
