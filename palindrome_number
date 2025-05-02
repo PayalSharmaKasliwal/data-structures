@@ -1,0 +1,16 @@
+class Solution(object):
+    def isPalindrome(self, x):
+        """
+        :type x: int
+        :rtype: bool
+        """
+        z=str(x)
+        y=[d for d in z]
+        print(y)
+        num=len(y)
+        for i,j in zip(range(num) ,range(num-1,0,-1)):
+                if(y[i]!=y[j]):
+                    return False
+                
+        return True
+
